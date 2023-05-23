@@ -1,0 +1,123 @@
+body {
+    background-color: #FFFFFF;
+  }
+  
+  h1 {
+    color: #0000FF;
+  }
+  
+  #input-texto {
+    background-color: #E6F3FF;
+    border: 2px solid #0000FF;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  #output-resultado {
+    background-color: #E6F3FF;
+    border: 2px solid #0000FF;
+    padding: 10px;
+  }
+  
+  button {
+    background-color: #FFFFFF;
+    color: #0000FF;
+    border: 2px solid #0000FF;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #0000FF;
+    color: #FFFFFF;
+  }
+  
+  #btn-copiar {
+    margin-left: 20px;
+  }
+  
+  #input-texto:focus {
+    outline: none;
+    box-shadow: 0 0 10px #0000FF;
+  }
+  
+  ::placeholder {
+    color: #0000FF;
+    opacity: 0.5;
+  }
+  
+  @media (max-width: 768px) {
+    button {
+      font-size: 1.2rem;
+      padding: 15px 30px;
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #input-texto,
+    #output-resultado {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #input-texto,
+    #output-resultado {
+      font-size: 1.2rem;
+      width: 100%;
+    }
+  }
+  body {
+    width: 100%;
+  }
+
+  #input-texto,
+#output-resultado {
+  width: 40%;
+  max-width: 800px;
+}
+#input-texto,
+#output-resultado {
+  font-size: 1.6rem;
+}
+
+body {
+    background-image: url('https://www.example.com/background-image.jpg');
+    background-size: cover;
+  }
+  
+  #output-resultado {
+    position: absolute;
+    top: 1;
+    right:0
+    ;
+  }
+  #resultado {
+    position: absolute;
+    top: 250px;
+    right: 50px;
+    width: calc(20% - 50px);
+ 
+  
+   
+  }
+   
+  #texto-encriptado {
+    position: absolute;
+    top: 50px;
+    right: 100px;
+    width: calc(80% - 120px);
+    height: calc(100% - 100px);
+    padding: 10px;
+    background-color: #f2f2f2;
+    border: none;
+    resize: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    color: #333;
+  }
+  

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Encriptador de texto</title>
+    <link rel="stylesheet" href="/PaginaFront/ccs/style.css">
+  </head>
+  <body>
+    <h1>Encriptador de texto</h1>
+    <p>Introduce el texto que quieres encriptar o desencriptar:</p>
+    <textarea id="input-texto" rows="4" cols="50"></textarea>
+    <br>
+    <button id="btn-encriptar">Encriptar</button>
+    <button id="btn-desencriptar">Desencriptar</button>
+    <button id="btn-copiar">Copiar resultado</button>
+    <br>
+    <div id="resultado">  <p>Resultado:</p></div>
+
+  
+    <textarea id="output-resultado" rows="4" cols="50"></textarea>
+    <script src="encriptador.js"></script>
+  </body>
+</html>
+
+<script>
+
+// Función para encriptar texto
+function encriptarTexto(texto) {
+  texto = texto.toLowerCase();
+  texto = texto.replace(/e/g, "enter");
+  texto = texto.replace(/i/g, "imes");
+  texto = texto.replace(/a/g, "ai");
+  texto = texto.replace(/o/g, "ober");
+  texto = texto.replace(/u/g, "ufat");
+  return texto;
+}
+
+// Función para desencriptar texto
+function desencriptarTexto(texto) {
+  texto = texto.replace(/ufat/g, "u");
+  texto = texto.replace(/ober/g, "o");
+  texto = texto.replace(/ai/g, "a");
+  texto = texto.replace(/imes/g, "i");
+  texto = texto.replace(/enter/g, "e");
+  return texto;
+}
+
+// Obtener elementos del DOM
+const inputTexto = document.querySelector("#input-texto");
+const btnEncriptar = document.querySelector("#btn-encriptar");
+const btnDesencriptar = document.querySelector("#btn-desencriptar");
+const outputResultado = document.querySelector("#output-resultado");
+
+// Añadir eventos a los botones
+btnEncriptar.addEventListener("click", () => {
+  const texto = inputTexto.value;
+  const textoEncriptado = encriptarTexto(texto);
+  outputResultado.textContent = textoEncriptado;
+});
+
+btnDesencriptar.addEventListener("click", () => {
+  const texto = inputTexto.value;
+  const textoDesencriptado = desencriptarTexto(texto);
+  outputResultado.textContent = textoDesencriptado;
+});
+
+// Función para copiar el resultado al portapapeles
+function copiarResultado() {
+  const resultado = outputResultado.textContent;
+  navigator.clipboard.writeText(resultado)
+    .then(() => {
+      alert("Resultado copiado al portapapeles.");
+    })
+    .catch((error) => {
+      console.error("Error al copiar el resultado: ", error);
+    });
+}
+
+// Añadir evento al botón de copiar
+const btnCopiar = document.querySelector("#btn-copiar");
+btnCopiar.addEventListener("click", copiarResultado);
+
+
+</script>
